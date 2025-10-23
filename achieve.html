@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+  
+  transition: all 0.3s ease-in-out;
+}
+
+        
+        body {
+  background: linear-gradient(135deg, #d7aefb, #f8bbd0);
+  background-attachment: fixed;
+  font-family: "Poppins", sans-serif;
+}
+
+        #top_bar {
+  height: 80px;
+  background: #c471ed;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  border-radius: 0 0 20px 20px;
+}
+
+        #back{
+            position: fixed;
+            border-radius:10px;
+        }
+        #back:hover{
+            height: 35px;
+            width: 35px;
+            transition: transform 0.3s ease;
+            
+        }
+        p{
+            text-align: center;
+            justify-content: center;
+            padding-top: 50px;
+            font-size: 35px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: aliceblue;
+        }
+        
+#outer {
+  width: 600px;            
+  height: 350px;
+  margin: 40px auto;        
+  background-size:cover;   
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#outer:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+
+        #prev{
+            display: inline;
+            margin-top:60px;
+        }
+        #next{
+            margin-bottom:30px;
+            margin-left:560px;
+            margin-top:40px;
+            
+        }
+       .logo:hover{
+        cursor: pointer;
+        background-color: yellow;
+        color: white;
+        border-radius: 100%;
+       }
+       #controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; 
+  margin-top: 20px;
+}
+
+#controls img {
+  background: white;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#controls img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+}
+
+#para {
+  max-width: 700px;
+  margin: 20px auto;
+  text-align: center;
+  font-weight: 600;
+  font-size: 22px;
+  color: #333;
+  line-height: 1.5;
+  background: rgba(255,255,255,0.6);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#heading:hover{
+    color: #8C00FF;
+    text-decoration: 2px red underline;
+}
+
+    </style>
+</head>
+<body>
+    <a href="home.html" alt="sorry!"><img id="back" src="data:image/png;base64,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" height="30px" width="30px"></a>
+    <div id="top_bar">
+        <p id="heading">Achievements</p>
+    </div>
+    
+
+  <div id="outer"></div>
+
+
+<div id="controls">
+  <img class="logo" id="previous"
+       src="https://cdn-icons-png.flaticon.com/128/4347/4347403.png"
+       height="40px" width="40px">
+  <img class="logo" id="nxt"
+       src="https://cdn-icons-png.flaticon.com/128/318/318275.png"
+       height="35px" width="35px">
+</div>
+
+<p id="para"></p>
+
+
+    <script>
+        let next = document.querySelector("#nxt");
+let previous = document.querySelector("#previous");
+let para = document.getElementById("para");
+let outer = document.getElementById("outer");
+
+const achievements = [
+  {
+    img: "images/synergia_winners.jpg",
+    text: "This is one of a milestone in my journey where our project got selected abmog top one's and we won the trophy."
+  },
+  {
+    img: "images/canara.jpg",
+    text: "images/At canara pu college i got felicitated for scoring distinction marks in puc annual eaxmination."
+  },
+  {
+    img: "images/cricket.jpg",
+    text: "Our team won the cricket tournament which we practised alot for it and achieving this award."
+  },
+  {
+    img: "images/mentor_synergia.jpg",
+    text: "Our senior as mentor helped alot so our project got funded at SCEM ."
+  },
+  {
+    img: "images/canara_bulls.jpg",
+    text: "As i am fond of kabbadi , our team won the Champions at inter college kabbadi tournament at canara college mangalore."
+  }
+];
+
+let index = 0;
+
+function showImage() {
+  outer.style.backgroundImage = `url(${achievements[index].img})`;
+  para.textContent = achievements[index].text;
+}
+
+next.addEventListener("click", () => {
+  index = (index + 1) % achievements.length;
+  showImage();
+});
+
+previous.addEventListener("click", () => {
+  index = (index - 1 + achievements.length) % achievements.length;
+  showImage();
+});
+
+showImage();
+ </script>
+</body>
+</html>
